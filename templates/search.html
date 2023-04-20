@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            {% for house in results %}
+                <div class="col">
+                    <div class="card">
+                        <img src="{{ house.image.url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ house.country.name }}</h5>
+                            <p class="card-text author-decor">{{ house.price }}$</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="{% url 'house_detail' house.id %}" class="btn btn-sm btn-outline-secondary">
+                                        More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">{{ house.builded_year }}</small>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

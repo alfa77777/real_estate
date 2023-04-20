@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'houses'
+    'houses',
+    'account'
 ]
 
 MIDDLEWARE = [
@@ -111,8 +112,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-
+LOGIN_URL = "account:login"
+# LOGIN_REDIRECT_URL = "homepage"
+LOGIN_REDIRECT_URL = "account:profile"
+LOGOUT_REDIRECT_URL = "homepage"
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
