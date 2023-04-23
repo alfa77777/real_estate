@@ -85,14 +85,12 @@ WSGI_APPLICATION = 'poverty.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': env('DATABASE_NAME'),
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': env('DATABASE_NAME'),
-        # 'USER': env('DATABASE_USER'),
-        # 'PASSWORD': env('DATABASE_PASSWORD'),
-        # 'HOST': 'localhost',
-        # 'PORT': 5432,
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 
