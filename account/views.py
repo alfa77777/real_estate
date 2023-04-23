@@ -1,16 +1,10 @@
-from msilib.schema import ListView
-
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
 from django.contrib.messages import get_messages
 from django.db.models import Q
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
-from django.views import generic
-from django.views.generic import DetailView, CreateView
+from django.views.generic import CreateView
 
 from account.forms import CustomAuthenticationForm, RegistrationForm
 from houses.models import House
