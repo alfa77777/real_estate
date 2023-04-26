@@ -1,46 +1,62 @@
-{#{% extends 'base.html' %}#}
-{##}
-{#{% block content %}#}
-{#    <h1>Login</h1>#}
-{#    <form action="{% url 'account:login' %}" method="post">#}
-{#        {% csrf_token %}#}
-{#        <label for="username">Username:</label>#}
-{#        <input type="text" id="username" name="username">#}
-{#        <label for="password">Password:</label>#}
-{#        <input type="password" id="password" name="password">#}
-{#        <input type="submit" value="Login">#}
-{#    </form>#}
-{##}
-{#{% endblock %}#}
-
 {% extends 'base.html' %}
 
 {% block content %}
     <style>
 
+        h1 {
+            color: white;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        label {
+            color: white;
+        }
+
+        input[type=text], input[type=password] {
+            color: white;
+            background-color: #333;
+        }
+
+        input[type=submit] {
+            color: white;
+            background-color: #2b9348;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        input[type=submit]:hover {
+            background-color: #2b9348;
+        }
+
         .signup-link {
-			color: #333;
+			color: white;
 			font-size: 0.8rem;
 			text-align: center;
 			margin-top: 2rem;
 		}
 
 		.signup-link a {
-			color: #fc605b;
+			color: #00b4d8;
 			text-decoration: none;
 			font-weight: bold;
 			transition: color 0.2s ease-in-out;
 		}
 
 		.signup-link a:hover {
-			color: #ff8b84;
+			color: #00b4d8;
 		}
-
 
     </style>
 
     <h1>Login</h1>
-    <form action="{% url 'account:login' %}" method="post">
+    <form class="bg-dark" action="{% url 'account:login' %}" method="post">
         {% csrf_token %}
         <label for="username">Username:</label>
         <input type="text" id="username" name="username">

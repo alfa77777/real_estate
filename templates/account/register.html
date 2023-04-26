@@ -4,10 +4,50 @@
     {% if messages %}
         <ul class="messages">
             {% for message in messages %}
-                <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                <li  {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
             {% endfor %}
         </ul>
     {% endif %}
+    <style>
+        h1 {
+            color: white;
+        }
+
+        form {
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        form input[type="text"],
+        form input[type="password"],
+        form select {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #333;
+            color: white;
+        }
+        form input[type="submit"] {
+            background-color: #2b9348;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background-color: #2b9348;
+        }
+    </style>
     <h1>Register</h1>
     <form action="{% url 'account:register' %}" method="post">
         {% csrf_token %}
