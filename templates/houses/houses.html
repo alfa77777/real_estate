@@ -6,7 +6,9 @@
             {% for house in houses %}
                 <div class="col">
                     <div class="card">
-                        <img src="{{ house.image.url }}" class="card-img-top" alt="...">
+                        <a href="{% url 'house_detail' house.id %}" class="btn btn-sm btn-outline-secondary">
+                            <img src="{{ house.image.url }}" alt="..." class="card-img-top">
+                        </a>
                         <div class="card-body">
                             <h5 class="card-title">{{ house.country.name }}</h5>
                             <p class="card-text author-decor">{{ house.price }}$</p>

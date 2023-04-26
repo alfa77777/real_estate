@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
     <div class="container mt-5 mb-3">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <img src="{{ house.image.url }}" alt="Product Image" class="img-fluid">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12" style="color: white;">
+            <div class="col-md-12">
                 <h1>Category: {{ house.category.name }}</h1>
                 <h2>Country: {{ house.country.name }}</h2>
                 <h2>Region: {{ house.country.region }}</h2>
@@ -18,38 +18,11 @@
                 <h2>Updated year: {{ house.updated_year }}</h2>
                 <h2>Owner: {{ house.owner.name }}</h2>
                 <h2>Price: {{ house.price }} $</h2>
-{#                <h2>{{ car.title }}</h2>#}
-{#                <p>{{ car.description }}</p>#}
-{#                <p><b>Car made year :</b> {{ car.made_year }}</p>#}
-{#                <p><b> Car motor size :</b> {{ car.motor }}</p>#}
-{#                <p><b>Car color :</b> {{ car.color }}</p>#}
-{#                <h3>Car category: {{ car.category.name }}</h3>#}
-{#                <h3>Car owner : {{ car }}</h3>#}
-{#                <h3>Car price : {{ car.price }} $ /per day</h3>#}
-{#                <button class="btn btn-primary">Buy now</button>#}
+                {% if house.extra_info %}
+                    <h2>Extra information: {{ house.extra_info }}</h2>
+                {% endif %}
             </div>
         </div>
     </div>
+    </div>
 {% endblock %}
-
-
-
-{#{% extends "base.html" %}#}
-{##}
-{#{% block content %}#}
-{#    <div class="container">#}
-{#        <h1>Category: {{ house.category.name }}</h1>#}
-{#        <h2>Country: {{ house.country.name }}</h2>#}
-{#        <h2>Region: {{ house.country.region }}</h2>#}
-{#        <h2>Target: {{ house.target }}</h2>#}
-{#        <h2>Amount of rooms: {{ house.amount_of_rooms }}</h2>#}
-{#        <h2>Square footage: {{ house.square_footage_meter }} m kv.</h2>#}
-{#        <h2>Builded year: {{ house.builded_year }}</h2>#}
-{#        <h2>Updated year: {{ house.updated_year }}</h2>#}
-{#        <h2>Owner: {{ house.owner.name }}</h2>#}
-{#        <h2>Price: {{ house.price }} $</h2>#}
-{#        {% if house.extra_info %}#}
-{#            <h2 class="card-text">Extra info: {{ house.extra_info }}</h2>#}
-{#        {% endif %}#}
-{#    </div>#}
-{#{% endblock %}#}

@@ -71,7 +71,7 @@ class RegisterView(CreateView):
 #
 def search(request):
     search_query = request.POST.get("search")
-    expression = Q(address__icontains=search_query) | \
+    expression = Q(country__region__icontains=search_query) | \
                  Q(country__name__icontains=search_query)
     queryset = House.objects.filter(expression)
     return render(request, "search.html", {"results": queryset})
